@@ -87,7 +87,7 @@ export default function TodoScreen() {
 
       <FlatList
         data={tasks}
-        renderItem={    renderItem}
+        renderItem={renderItem}
         keyExtractor={(item) => item.id}
         style={styles.list}
         ListEmptyComponent={
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f6f9fa",
   },
   title: {
+    marginTop: 20,
     fontSize: 22,
     marginBottom: 12,
     color: "#000",
