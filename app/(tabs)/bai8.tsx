@@ -1,6 +1,5 @@
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
@@ -29,12 +28,12 @@ function ProfileScreen({ navigation }: { navigation: any }) {
       <ThemedText style={styles.title}>Profile Screen</ThemedText>
       <View style={styles.profileInfo}>
         <ThemedText style={styles.profileText}>
-          Họ và tên: Trần Gia Khánh
+          Họ và tên: Trương Quốc Khánh
         </ThemedText>
-        <ThemedText style={styles.profileText}>MSSV: 21522227</ThemedText>
-        <ThemedText style={styles.profileText}>Lớp: KTPM2021</ThemedText>
+        <ThemedText style={styles.profileText}>MSSV: 123</ThemedText>
+        <ThemedText style={styles.profileText}>Lớp: 1a</ThemedText>
         <ThemedText style={styles.profileText}>
-          Email: 21522227@gm.uit.edu.vn
+          Email: khanh123@gmail.com
         </ThemedText>
       </View>
       <TouchableOpacity
@@ -50,24 +49,22 @@ function ProfileScreen({ navigation }: { navigation: any }) {
 // Main App Component
 export default function Bai8() {
   return (
-    <NavigationContainer independent={true as any}>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={ProfileScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
   );
 }
 
@@ -101,9 +98,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     padding: 20,
     borderRadius: 10,
+    
   },
   profileText: {
     fontSize: 16,
     marginBottom: 10,
+    color:'#000000ff'
   },
 });
