@@ -1,30 +1,32 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Image } from "expo-image";
+import { StyleSheet } from "react-native";
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import ParallaxScrollView from "@/components/parallax-scroll-view";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: "#f4611dff", dark: "#1D3D47" }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require("@/assets/images/partial-react-logo.png")}
           style={styles.reactLogo}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Xin chào React Native!</ThemedText>
+        <Image
+          source={require("@/assets/images/react-logo.png")}
+          style={styles.logo}
+          contentFit="contain"
+        />
+        <ThemedText type="title">Xin chào React!</ThemedText>
         {/* <HelloWave /> */}
       </ThemedView>
       <ThemedView>
-        <ThemedView>
-          
-        </ThemedView>
+        <ThemedView></ThemedView>
       </ThemedView>
       {/* <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
@@ -85,9 +87,12 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    // stack image above text and center both
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     gap: 8,
+    width: "100%",
   },
   stepContainer: {
     gap: 8,
@@ -98,6 +103,11 @@ const styles = StyleSheet.create({
     width: 290,
     bottom: 0,
     left: 0,
-    position: 'absolute',
+    position: "absolute",
+  },
+  logo: {
+    width: 160,
+    height: 160,
+    marginBottom: 12,
   },
 });
